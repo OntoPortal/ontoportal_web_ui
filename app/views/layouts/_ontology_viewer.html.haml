@@ -95,8 +95,8 @@
               = link_to(sub.documentation, class: 'btn btn-outline-secondary', "aria-label": "Documentation",
                         title: "Documentation", target: "_blank") do
                 %i.fas.fa-lg.fa-book-reader{"aria-hidden": true}
-            - unless sub.publication.nil?
-              = link_to(sub.publication, class: 'btn btn-outline-secondary', "aria-label": "Publications",
+            - unless Array(sub.publication).last.nil?
+              = link_to(Array(sub.publication).last, class: 'btn btn-outline-secondary', "aria-label": "Publications",
                         title: "Publications", target: "_blank") do
                 %i.far.fa-lg.fa-newspaper{"aria-hidden": true}
           - if @ontology.admin?(session[:user])
